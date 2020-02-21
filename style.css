@@ -1,3 +1,7 @@
+/* 
+Autor: Deiver Zamora Cortez
+CMD student
+*/
 body {
     width: 100%;
     margin: 0;
@@ -244,9 +248,15 @@ body {
 }
 
 @keyframes flash {
-	0% { opacity: 1; } 
-	50% { opacity: 0.1; } 
-    100% { opacity: 1; }
+	0% { 
+        opacity: 1; 
+    } 
+	50% { 
+        opacity: 0.1; 
+    } 
+    100% { 
+        opacity: 1; 
+    }
 }
 
 /* /JavaScript ON/ */
@@ -698,12 +708,35 @@ audio:focus {
     outline: none;
 }
 button {
-    height: 6em;
-    width: 6em;
-    margin-left: 1em;
+    height: 5em;
+    width: 5em;
+    margin: 1em;
     border-radius: 8em;
+    font-size: 12px;
+    background: white;
+    border: none;
+    position: relative;
 }
 
+.play:after{
+    content: '';
+    width: 3em;
+    height: 2.5em;
+    background: black;
+    clip-path: polygon(30% 0%, 30% 100%, 100% 50% );
+    top: calc(25%);
+    left: calc(12%);
+    position: absolute;
+}
+.play:focus:after{
+    background: white;
+}
+
+button:focus{
+    outline: none;
+    background-color: black;
+    color: white;
+}
 /* /+/Classes if JavaScript is ON/+/ */
 
 body.spelen .light, 
@@ -724,10 +757,11 @@ body.show .controls{
     
 }
 .yellowLight , .blueLight, .orangeLight {
-    position: absolute;
+    /* position: absolute; */
 }
 .blueLight {
-    z-index:9999;
+    /* position: absolute;
+    margin-left: 8em; */
 }
 .orangeLight {
     z-index:9999;
