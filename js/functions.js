@@ -3,41 +3,43 @@ let pause = document.getElementById('pause');
 let audioControls = document.getElementById('audioControls');
 
 
-play.addEventListener('click', 
-    function (event) {         
-        //Speel music af
-        document.getElementById('soundTrack').play();
-        
-        //Haal de puaze animatie weg 
-        document.querySelector('.cat-head').classList.remove('pause-animation');
-        document.querySelector('.arm:nth-of-type(1)').classList.remove('pause-animation');
-        document.querySelector('.arm:nth-of-type(2)').classList.remove('pause-animation');
+play.addEventListener('click', function(){
 
-        //Zet een class zodat bepaalde gedeeltes bewegen
-        document.querySelector('.cat-head').classList.add('play-animation-5sec');
-        document.querySelector('.arm:nth-of-type(1)').classList.add('play-animation-5sec');
-        document.querySelector('.arm:nth-of-type(2)').classList.add('play-animation-5sec');
+    // This is the class that activates the elements if the play button is clicked
+    document.body.classList.add("spelen");
 
+    // Play the music
+    document.getElementById('soundTrack').play();
+});
 
-    }
-);
+pause.addEventListener('click', function(){
 
-pause.addEventListener('click', 
-    function (event) {
-        
-        //Pauzeer de muziek
-        document.getElementById('soundTrack').pause();
-        
-        //Pauzeer de elmenten die bewegen
-        document.querySelector('.cat-head').classList.add('pause-animation');
-        document.querySelector('.arm:nth-of-type(1)').classList.add('pause-animation');
-        document.querySelector('.arm:nth-of-type(2)').classList.add('pause-animation');
-    }
-);
+    // This removes the class that activates everything
+    document.body.classList.remove("spelen");
+    
+    // Pause the music
+    document.getElementById('soundTrack').pause();
+});
 
+document.querySelector(".yellowLight").addEventListener("click", function(event){
+    // This manipualates the lights
+    document.body.classList.toggle("yellowLight");
+});
+
+document.querySelector('.blueLight').addEventListener("click", function(event){
+    // This manipualates the lights
+    document.body.classList.toggle("blueLight");
+});
+
+document.querySelector('.orangeLight').addEventListener("click", function(event){
+    // This manipualates the lights
+    document.body.classList.toggle("orangeLight");
+});
 
 audioControls.addEventListener('click', 
     function(event){
-        controlDis = document.getElementById('soundTrack').classList.toggle('apare');
+        document.body.classList.toggle("show");
     }
 );
+
+
