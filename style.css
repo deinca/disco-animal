@@ -3,8 +3,10 @@ body {
     margin: 0;
 }
 
+/*/ Color Variables /*/
 
-/* /Achtergrond kleur/ */
+
+/* /Background color grdiant/ */
 /* Bron: https://cssgradient.io/ */
 .full-bg{
     background: rgb(179,102,206);
@@ -17,7 +19,7 @@ body {
     position: relative;
 }
 
-/* /Cirkels op de achtergrond/ */
+/* /Circle structure */
 /* Bron:https://css-tricks.com/drawing-images-with-css-gradients/ */
 .circle {
     position: absolute;
@@ -31,7 +33,19 @@ body {
     transparent 40%);
     background-size: 2em 2em;
     background-repeat: repeat;
+    animation: gradiantMove 2s infinite;
+    animation-direction: alternate-reverse ;
+    animation-play-state: paused;
 }
+
+@keyframes gradiantMove {
+	0% { opacity: 1; } 
+	50% { opacity: 0.1; } 
+    100% { opacity: 1; }
+}
+
+
+/* Sterren */
 .star {
     width: 2em;
     height: 2em;
@@ -52,41 +66,209 @@ body {
     );
 }
 
-.geelLicht {
-    position: absolute;
-    z-index:9999;
+.star:nth-of-type(1){
+    left: 2%;
+    top: 15%;
+    width: 1.5em;
+    height: 1.5em;
+}
+.star:nth-of-type(2){
+    left: 4%;
+    transform: rotate(45deg);
+    width: 1em;
+    height: 1em;
+    top: 40%;
+}
+.star:nth-of-type(3){
+    left: 10%;
+    top: 30%;
+    transform: rotate(45deg);
+    
+}
+.star:nth-of-type(4){
+    left: 17%;
+    top: 10%;
+}
+.star:nth-of-type(5){
+    left: 17%;
+    top: 40%;
+}
+.star:nth-of-type(6){
+    left: 80%;
+    top: 10%;
+}
+.star:nth-of-type(7){
+    left: 90%;
+    top: 8%;
+    transform: rotate(45deg);
+}
+.star:nth-of-type(8){
+    left: 63%;
+    top: 40%;
+}
+.star:nth-of-type(9){
+    left: 90%;
+    top: 17em;
+    transform: rotate(45deg);
+    width: 1em;
+    height: 1em;
+}
+.star:nth-of-type(10){
+    left: 70%;
+    top: 60%;
+    width: 1.7em;
+    height: 1.7em;
 }
 
+/* /Circles/ */
+.cirkel {
+    width: 1em;
+    height: 1em;
+    background: white;
+    position: absolute;
+    border-radius: 1em;
+    z-index: 5;
+}
+
+
+
+.cirkel:nth-last-of-type(1) {    
+    top: 5%;
+    left: 45%;
+    background: #fee1ff;
+    animation: flash linear 2.5s infinite;
+}
+.cirkel:nth-last-of-type(2) {
+    width: 0.8em;
+    height: 0.8em;
+    top: 10%;
+    left: 15%;
+    animation: flash linear 2.6s infinite;
+}
+.cirkel:nth-last-of-type(3) {
+    top: 55%;
+    left: 80%;
+    animation: flash linear 2.7s infinite;
+}
+.cirkel:nth-last-of-type(4) {
+    background: #fee1ff;
+    top: 25%;
+    left: 73%;
+    animation: flash linear 2.8s infinite;
+}
+.cirkel:nth-last-of-type(5) {
+    top: 45%;
+    left: 25%;
+    animation: flash linear 2.9s infinite;
+}
+.cirkel:nth-last-of-type(6) {
+    background: #fee1ff;
+    width: 0.7em;
+    height: 0.7em;
+    top: 45%;
+    left: 60%;
+    animation: flash linear 2s infinite;
+}
+
+.c-bg {
+    background: linear-gradient(
+    180deg,
+    rgba(179,102,206,0.5) 0%,
+    rgba(100,99,226,0.98) 50%,
+    rgba(53,231,245,1) 100%);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* Square background */
+.square {
+    position: absolute;
+    width: 100%;
+    height: 41vh;
+    bottom: 0;
+    background: radial-gradient(
+    rgba(255, 255, 255, 0.5) 83%, 
+    rgba(100,99,226,0) 2%, 
+    rgba(100,99,226,0.0), 
+    transparent 60%);
+    background-repeat: repeat;
+    background-size: 5em 5em;
+    margin: 0 auto;
+}
+/* Square background overlay */
+.s-bg {
+    background: linear-gradient(
+    180deg, 
+    rgba(100,99,226,1) 25%, 
+    rgba(53,231,245,0.3) 100%);
+    height: 51vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+@keyframes scaleItem{
+    0%{
+        transform:scale(1.5);
+    }
+    50%{
+        transform:scale(1) ;
+    }
+    100%{ 
+        transform:scale(1.5);
+    }
+}
+
+/* /Light/ */
 .light {
     --lightColor: linear-gradient(180deg, 
-     rgba(252,255,221,0.9) 0%,
-     rgba(255,139,253,0.8) 20%, 
-     rgba(255,198,250,0) 100%);
+    #fcffdde6 0%, 
+    #ff8bfdcc 20%, 
+    #ffc6fa00 100%);
     height: 27em;
     width: 16em;
     z-index: 2;
     position: absolute;
-    clip-path: polygon(20% 0%, 80% 0%, 75% 0, 100% 100%, 0% 100% );
-    /* background: linear-gradient(180deg, rgba(252,255,221,0.9) 0%, rgba(255,139,253,0.8) 20%, rgba(255,198,250,0) 100%); */
+    clip-path: polygon(
+    20% 0%, 
+    80% 0%, 
+    75% 0, 
+    100% 100%, 
+    0% 100% );
     background:var(--lightColor);
     /* /ANIMATION LIGHTS/ */
     /* BRON: https://codepen.io/iPawan/pen/BKkCo */
     animation: flash linear 1s infinite;
-}
-
-body.geelLicht .light {
-    --lightColor: linear-gradient(180deg,   
-     rgba(252,255,221,0.9) 0%,
-     rgba(255,255,253,0.8) 20%, 
-     rgba(255,255,250,0) 100%);
+    animation-play-state: paused;
 }
 
 @keyframes flash {
 	0% { opacity: 1; } 
-	50% { opacity: .1; } 
-	100% { opacity: 1; }
+	50% { opacity: 0.1; } 
+    100% { opacity: 1; }
 }
 
+/* /JavaScript ON/ */
+body.yellowLight .light {
+    --lightColor: linear-gradient(180deg, 
+    #ffe9e9e6 0%, 
+    #fbff42cc 20%, 
+    #fffffa00 100%);
+}
+
+body.blueLight .light {
+    --lightColor: linear-gradient(180deg, 
+    #ffe9e9e6 0%, 
+    #4f42ffcc 20%, 
+    #fffffa00 100%);
+}
+body.orangeLight .light {
+    --lightColor: linear-gradient(180deg, 
+    #ffe9e9e6 0%, 
+    #c96100cc 20%, 
+    #fffffa00 100%);
+}
 
 .light:nth-of-type(1){
     top: -3em;
@@ -104,154 +286,13 @@ body.geelLicht .light {
     transform: rotate(-20deg);
 }
 
-/* Sterren */
-.star:nth-of-type(1){
-    margin-left: 2em;
-    margin-top: 15em;
-    width: 1.5em;
-    height: 1.5em;
-}
-.star:nth-of-type(2){
-    margin-left: 4em;
-    transform: rotate(45deg);
-    width: 1em;
-    height: 1em;
-    margin-top: 19em;
-}
-.star:nth-of-type(3){
-    margin-left: 9em;
-    margin-top: 9em;
-    transform: rotate(45deg);
-}
-.star:nth-of-type(4){
-        margin-left: 17em;
-    margin-top: 3em;
-}
-.star:nth-of-type(5){
-    margin-left: 17.5em;
-    margin-top: 21em;
-}
-.star:nth-of-type(6){
-    margin-left: 40em;
-    margin-top: 5em;
-}
-.star:nth-of-type(7){
-    margin-left: 45em;
-    margin-top: 2em;
-    transform: rotate(45deg);
-}
-.star:nth-of-type(8){
-    margin-left: 53em;
-    margin-top: 13em;
-}
-.star:nth-of-type(9){
-    margin-left: 71em;
-    margin-top: 17em;
-    transform: rotate(45deg);
-    width: 1em;
-    height: 1em;
-}
-.star:nth-of-type(10){
-    margin-left: 65em;
-    margin-top: 5em;
-    width: 1.7em;
-    height: 1.7em;
-}
-.cirkel {
-    width: 1em;
-    height: 1em;
-    background: white;
-    position: absolute;
-    border-radius: 1em;
-    z-index: 5;
-}
-
-.cirkel:nth-last-of-type(1) {
-    margin: 3em 0 0 30em;
-    background: #fee1ff;
-}
-.cirkel:nth-last-of-type(2) {
-    margin: 5.5em 0 0 49.5em;
-    width: 0.8em;
-    height: 0.8em;
-}
-.cirkel:nth-last-of-type(3) {
-    margin: 0 0 0 40em;
-}
-.cirkel:nth-last-of-type(4) {
-    margin: 10em 0 0 60em;
-    background: #fee1ff;
-}
-.cirkel:nth-last-of-type(5) {
-    margin: 18em 0 0 45em;
-    width: 0.5em;
-    height: 0.5em;
-}
-.cirkel:nth-last-of-type(6) {
-    margin: 16em 0 0 55em;
-    width: 0.7em;
-    height: 0.7em;
-}
-
-.c-bg {
-    background: linear-gradient(180deg, rgba(179,102,206,0.5) 0%, rgba(100,99,226,0.98) 50%, rgba(53,231,245,1) 100%);
-    height: 100vh;
-    width: 100%;
-    position: relative;
-}
-
-.square {
-    position: absolute;
-    width: 100%;
-    height: 41vh;
-    bottom: 0;
-    background: radial-gradient( rgba(255, 255, 255, 0.5) 83%, rgba(100,99,226,0) 2%, rgba(100,99,226,0.0), transparent 60%);
-    background-repeat: repeat;
-    background-size: 5em 5em;
-    margin: 0 auto;
-}
-
-.s-bg {
-    background: linear-gradient(180deg, rgba(100,99,226,1) 25%, rgba(53,231,245,0.3) 100%);
-    height: 51vh;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    z-index: 1;
-}
-
 .animals {
     width: 100%;
     height: 100vh;
     position: relative;
 }
 
-/* /Kat/ */
-.cat-head {
-    height: 8em;
-    /* background:#ff000070; */
-    margin: 0 2.5em;
-    position: relative;
-    z-index: 2;
-    
-    /* /CAT HEAD ANIMATION/ */
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-name: cat-bounce;
-    animation-timing-function: ease;
-    animation-play-state: paused;
-    
-}
-
-body.spelen .cat-head {
-    animation-play-state: running;
-}
-
-@keyframes cat-bounce {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
-}
+/* /CAT CANVAS/ */
 .cat {
     position: absolute;
     width: 15em;
@@ -261,6 +302,28 @@ body.spelen .cat-head {
     left: calc(50% - 8em);
     bottom: calc(100% - 36em );
 }
+/* /CAT HEAD/ */
+.cat-head {
+    height: 8em;
+    margin: 0 2.5em;
+    position: relative;
+    z-index: 6;
+    
+    /* /CAT HEAD ANIMATION/ */
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-name: cat-bounce;
+    animation-timing-function: ease;
+    animation-play-state: paused;
+    
+}
+@keyframes cat-bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+
 
 .ear {
     width: 4em;
@@ -438,6 +501,23 @@ body.spelen .cat-head {
     height: 10em;
     /* background: #ffff0091; */
     position: relative;
+    z-index: 5;
+
+        /* CAT BODY ANIMATION */
+        animation-name: move-2;
+        animation-duration: .5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+        animation-play-state: paused;
+}
+@keyframes move-2{
+    0% { 
+        transform: matrix(1, 0, 0.1, 1, 0, 0);
+        }
+    100% { 
+        transform: matrix(1, 0, -0.1, 1, 0, 0);
+    }
 }
 .belly {
     width: 8em;
@@ -501,11 +581,12 @@ body.spelen .cat-head {
     
     /* CAT ARMS ANIMATION */
     animation-name: move-1;
-    /* animation-duration: .5s; */
+    animation-duration: .5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     transform-origin: top center;
     animation-direction: alternate-reverse;
+    animation-play-state: paused;
 
 }
 @keyframes move-1 {
@@ -524,15 +605,13 @@ body.spelen .cat-head {
     height: 4em;
     position: absolute;
 }
-
-
-
 .arm:nth-of-type(1){
     left: 0;
 }
 .arm:nth-of-type(2){
     right: 0;
 }
+
 .bracelet {
     background: #fffa97;
     width: 3em;
@@ -540,11 +619,21 @@ body.spelen .cat-head {
     position: absolute;
     top: 11em;
 }
-/* /KAT LEGS/ */
+/* /CAT LEGS/ */
 .cat-legs {
     height: 14em;
     /* background: #00800099; */
     position: relative;
+    z-index: 4;
+
+            /* CAT BODY ANIMATION */
+            animation-name: move-2;
+            animation-duration: .5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            animation-play-state: paused;
+            
 }
 .butt {
     width: 8em;
@@ -568,7 +657,7 @@ body.spelen .cat-head {
 .leg:nth-of-type(3){
     right: calc(50% - 4em);
 }
-/* /SHADOW/ */
+/* /CAT SHADOW/ */
 .cat:after {
     content: '';
     background: #00000036;
@@ -580,7 +669,9 @@ body.spelen .cat-head {
     border-radius: 21em;
     transform: matrix3d(2, 0, 0, 0, 0, 0.6, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1);
 }
-/* /FOOTER/ */
+
+
+/* /FOOTER CONTROLS/ */
 footer {
     position: absolute;
     bottom: 0;
@@ -589,14 +680,19 @@ footer {
 }
 .controls {
     background: #00000024;
-    position: relative;
+    position: fixed;
+    bottom: -3.5em;
+    width: 100%;
+
+    transition: bottom 0.2s linear 0.2s;
+
 }
 /* /AUDIO/ */
 audio {
     width: 100%;
     z-index: 4;
     opacity: 0.4;
-    display: none;
+    display: block;
 }
 audio:focus {
     outline: none;
@@ -608,15 +704,42 @@ button {
     border-radius: 8em;
 }
 
-/* /+/CLASSES FOR JS/+/ */
+/* /+/Classes if JavaScript is ON/+/ */
 
-.disapare {
+body.spelen .light, 
+body.spelen .arm, 
+body.spelen .cat-head, 
+body.spelen  .circle, 
+body.spelen  .cat-body, 
+body.spelen  .cat-legs {
+    animation-play-state: running;
+}
+body.spelen .star {
+    animation: scaleItem 3s infinite;
+}
+
+body.show .controls{
+    bottom: 0em;
+    transition: bottom 0.2s linear 0.2s;
+    
+}
+.yellowLight , .blueLight, .orangeLight {
+    position: absolute;
+}
+.blueLight {
+    z-index:9999;
+}
+.orangeLight {
+    z-index:9999;
+}
+
+/* .disapare {
     display: none;
-}
+} */
 
-.apare{
+/* .apare{
     display: block;
-}
+} */
 
 .pause-animation{
     animation-play-state: paused;
